@@ -35,5 +35,8 @@ RUTAS
 6. Importar en app.module.ts con APP_ROUTES 
 7. En app.component.html agregar  <router-outlet></router-outlet> que carga el contenido de nuestras paginas
 
+MODULOS PERSONALIZADOS
+
+pages.module.ts @NgModule ({})
 
 

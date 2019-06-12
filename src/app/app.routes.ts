@@ -1,26 +1,15 @@
 import { RouterModule, Routes } from '@angular/router'
-// revisar que se importen los conponentes respectivos 
-import { PagesComponent } from './pages/pages.component';
 
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+// importacion de los compomentes de paginas 
 import { LoginComponent } from './login/login.component';
-import { ProgressComponent } from './pages/progress/progress.component';
 import { NopagefoundComponent } from './shared/breadcrumbs/nopagefound/nopagefound.component';
-import { Graficas1Component } from './pages/graficas1/graficas1.component';
 import { RegisterComponent } from './login/register.component';
 
 
-
 const appRoutes: Routes = [
-  
-    
+      
     {path: 'login', component: LoginComponent,},
     {path: 'register', component: RegisterComponent },
-    
- 
-    // ruta erronea redireccionar
-    
-    // cualquier error re
     {path: '**', component: NopagefoundComponent },
 ];
 

@@ -1,4 +1,4 @@
-LOGIN 
+﻿LOGIN 
 
 ng g c login --spec=false -is 
 ng g c login/register --spec=false -is 
@@ -22,6 +22,7 @@ SERVICIOS
 
 ng g s services/shared --speec=false
 ng g s services/sidebar --spec=false
+ng g s services/settings -m"app.module.ts" --spec=false
 
 COPIAR EN ASSETS TODOS LOS CSS, JS, IMG, ETC
 
@@ -38,5 +39,21 @@ RUTAS
 MODULOS PERSONALIZADOS
 
 pages.module.ts @NgModule ({})
+ng g c componentes/incremenar --is -- spec=false
+
+
+COMUNICACIÓN 
+
+@INPUT @OUPUT 
+
+MODULOS 
+especifica la creación de un modulo en pages/pages y no en app.module.ts
+la mayuscula crea un guion 
+ng g c pages/accountSettings -m="pages/pages.module.ts" --spec=false -is
+
+
+
+
+
 
 

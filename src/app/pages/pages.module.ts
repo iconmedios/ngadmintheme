@@ -1,32 +1,50 @@
 import { NgModule } from "@angular/core";
-import { PagesComponent } from './pages.component';
-// COMPOMENTES
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
-import { ProgressComponent } from './progress/progress.component';
-// MODULOS
-import { SharedModule } from '../shared/shared.module';
 // RUTAS
 import { PAGES_ROUTES } from './pages.routes';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from "@angular/forms"
+
+// COMPOMENTES
+import { PagesComponent } from './pages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProgressComponent } from './progress/progress.component';
+import { Graficas1Component } from './graficas1/graficas1.component';
+// MODULOS
+
+import { IncrementaComponent } from '../componentes/incrementa/incrementa.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+
+//import { GraficoDonaComponent } from '../componentes/grafico-dona/grafico-dona.component';
+
+
+
 
 
 @NgModule({
     declarations:[
         PagesComponent,
         DashboardComponent,
-        Graficas1Component,
         ProgressComponent,
+        Graficas1Component,
+        IncrementaComponent,
+        //GraficoDonaComponent,
+        AccountSettingsComponent
+    
     ],
 
     exports: [
-        PagesComponent,
+      
         DashboardComponent,
-        Graficas1Component,
-        ProgressComponent
+        ProgressComponent,
+        Graficas1Component
     ],
     imports: [
         SharedModule,
-        PAGES_ROUTES 
+        PAGES_ROUTES, 
+        FormsModule,
+       
+        
+
     ]
 
 

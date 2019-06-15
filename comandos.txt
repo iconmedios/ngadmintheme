@@ -52,6 +52,18 @@ la mayuscula crea un guion
 ng g c pages/accountSettings -m="pages/pages.module.ts" --spec=false -is
 
 
+PROMESAS
+
+ng g c pages/promesas --spec=false -is 
+ng g c pages/promesas --skipTests=false -is 
+ng g c pages/promesas -S=false -is 
+
+es lo mismo
+
+
+ 
+
+
 
 
 

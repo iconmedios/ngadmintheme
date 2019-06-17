@@ -12,13 +12,14 @@ const pagesRoutes: Routes =[
 
     {path: '', component: PagesComponent,
     //sub rutas
+    // data enivar como objeto {} para poder enivar mas información
     children:[
-        {path: 'dashboard', component: DashboardComponent },
-        {path: 'progress', component: ProgressComponent },
-        {path: 'graficas1', component: Graficas1Component },
-        {path: 'promesas', component: PromesasComponent },
-        {path: 'rxjs', component: RxjsComponent },
-        {path: 'configuracion', component: AccountSettingsComponent  },
+        {path: 'dashboard', component: DashboardComponent, data:{titulo: 'Escritorio'} },
+        {path: 'progress', component: ProgressComponent, data:{titulo: 'Barra de progreso'} },
+        {path: 'graficas1', component: Graficas1Component, data:{titulo: 'Gráficas'} },
+        {path: 'promesas', component: PromesasComponent, data:{titulo: 'Uso de Promesas'} },
+        {path: 'rxjs', component: RxjsComponent, data:{titulo: 'Panel RXJS'} },
+        {path: 'configuracion', component: AccountSettingsComponent, data:{titulo: 'Ajustes'}  },
         {path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ] 
     

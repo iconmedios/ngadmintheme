@@ -57,6 +57,7 @@ PROMESAS
 ng g c pages/promesas --spec=false -is 
 ng g c pages/promesas --skipTests=false -is 
 ng g c pages/promesas -S=false -is 
+ng g c pages/rxjs --skipTests=false -is 
 
 es lo mismo
 

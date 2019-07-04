@@ -6,6 +6,7 @@ import { URL_SERVICIOS } from 'src/app/config/config';
 import Swal from 'sweetalert2'
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
 
 
@@ -18,10 +19,11 @@ export class UsuarioService {
 
   constructor( 
     public http: HttpClient,
-    public router: Router
+    public router: Router,
+    public _subirArchivoService: SubirArchivoService
      ) { 
   
-    console.log('Servicio de usuario listo');
+    //console.log('Servicio de usuario listo');
     this.cargarStorage();
   }
 
@@ -72,14 +74,10 @@ export class UsuarioService {
     let url = URL_SERVICIOS + '/login/google';
 
     return this.http.post( url, { token }).pipe(
-
       map ( (resp: any )=> {
-
         this.guardarStorage( resp.id, resp.token, resp.usuario );
         return true;
       })
-
-
     );
 
   }
@@ -100,9 +98,9 @@ export class UsuarioService {
 
       this.guardarStorage( resp.id, resp.token, resp.usuario );
         // guardar en el local storage v157
-        localStorage.setItem('id', resp.id);
-        localStorage.setItem('token', resp.token);
-        localStorage.setItem('usuario', JSON.stringify (resp.usuario));
+        // localStorage.setItem('id', resp.id);
+        // localStorage.setItem('token', resp.token);
+        // localStorage.setItem('usuario', JSON.stringify (resp.usuario));
         return true;
     
       }))
@@ -128,8 +126,56 @@ crearUsuario( usuario: Usuario ){
 
       return resp.usuario;
       })
-    );
+    )
    
   }
+  // v171 aadv
+  actualizarUsuario( usuario: Usuario ){
+
+    let url = URL_SERVICIOS + '/usuario/' + usuario._id;
+    url += '?token=' + this.token;
+    // console.log( url);
+    return this.http.put( url, usuario ).pipe(
+
+      map ( (resp: any )=> {
+
+        let usuarioDB: Usuario = resp.usuario;
+        this.guardarStorage( usuarioDB._id, this.token, usuarioDB   )
+        Swal.fire({
+          title: 'Usuario actualizado!',
+          text: usuario.nombre,
+          type: 'success',
+          animation: false
+        });
+
+        return true;
+      })
+    );
+   
+   
+  
+  }
+    // v174 se publico 
+    cambiarImagen( archivo: File, id: string ){
+      this._subirArchivoService.subirArchivo( archivo, 'usuarios', id)
+      .then( (resp:any ) =>{
+        this.usuario.img = resp.usuario.img;
+        Swal.fire({
+          title: 'Imagen actualizada!',
+          text: this.usuario.nombre,
+          type: 'success',
+          animation: false
+        });
+        // actualizar storage
+        this.guardarStorage(id, this.token, this.usuario );
+        
+        //console.log( resp );
+      })
+      .catch( resp =>{
+        console.log( resp );
+      });
+    }
 }
+
+
 

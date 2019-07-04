@@ -5,3 +5,5 @@
 .pointer {
   cursor: pointer;
 }
+
+.w150 { width: 50%; height: auto;}

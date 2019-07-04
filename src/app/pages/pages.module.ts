@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
 // RUTAS
 import { PAGES_ROUTES } from './pages.routes';
 import { SharedModule } from '../shared/shared.module';
@@ -18,7 +19,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 
 //import { GraficoDonaComponent } from '../componentes/grafico-dona/grafico-dona.component';
 
-
+// Pipes Module
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -32,7 +35,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         //GraficoDonaComponent,
         AccountSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
     
     ],
 
@@ -43,11 +47,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         Graficas1Component
     ],
     imports: [
+        CommonModule,
         SharedModule,
         PAGES_ROUTES, 
         FormsModule,
+        PipesModule
        
-        
+              
 
     ]
 

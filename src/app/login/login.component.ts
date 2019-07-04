@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../services/service.index';
 import { Usuario } from '../models/usuario.model';
-import { element } from 'protractor';
+
 
 
 // funcion para iniciar assets/js/custom.min.js desde dentro

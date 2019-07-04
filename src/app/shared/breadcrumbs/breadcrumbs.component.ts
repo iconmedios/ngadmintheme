@@ -32,7 +32,7 @@ export class BreadcrumbsComponent implements OnInit {
 
    this.getDataRouter()
     .subscribe( data => {
-      console.log(data)
+      //console.log(data)
       // 3. enviar el titulo
       this.titulo = data.titulo;
       // Cargar la tag title

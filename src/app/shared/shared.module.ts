@@ -6,6 +6,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { FooterComponent } from './footer/footer.component';
 import { NopagefoundComponent } from './breadcrumbs/nopagefound/nopagefound.component';
 import { RouterModule } from '@angular/router';
+// Pipes module
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -13,7 +15,8 @@ import { RouterModule } from '@angular/router';
 
 imports:[
     RouterModule,
-    CommonModule
+    CommonModule,
+    PipesModule
 ],
 
     declarations:[

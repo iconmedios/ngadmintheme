@@ -62,7 +62,11 @@ ng g c pages/promesas --skipTests=false -is
 ng g c pages/promesas -S=false -is 
 ng g c pages/rxjs --skipTests=false -is 
 
-es lo mismo
+
+PIPES
+
+ng g p pipes/imagen --spec=false
+ng g m pipes/pipes --flat para no crear sub carpeta
 
 
 BACKEND
